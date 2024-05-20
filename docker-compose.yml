@@ -1,0 +1,31 @@
+# version: "3.9"
+volumes:
+  data1:
+services:
+  nginx:
+    container_name: nginx
+    image: nginx:latest
+    ports:
+      - 9000:80
+    networks: 
+      - laravel
+    volumes:
+      - data1:/data1
+  redis:
+    container_name: redis
+    image: redis:latest
+    networks: 
+      - laravel
+  php:
+    container_name: php8
+    image: php:latest
+    port
+
+networks:
+    laravel:
+      external:
+        true
+
+    
+
+
