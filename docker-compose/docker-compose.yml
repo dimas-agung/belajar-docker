@@ -1,0 +1,22 @@
+# version: "3.8"
+
+services:
+  nginx-compose:
+    container_name: nginx-compose
+    image: nginx:latest
+    ports:
+      - "8080:80"
+    # volumes:
+    #   - "./data-nginx:/etc/nginx/"
+  mongo-compose:
+    container_name: mongo-compose
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: dimas
+      MONGO_INITDB_ROOT_PASSWORD: dimas
+      MONGO_INITDB_ROOT_DATABASE: dimas
+    volumes:
+      - "./data-mongo:/data/db"
+     

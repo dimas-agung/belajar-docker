@@ -1,0 +1,1 @@
+docker build -t agung/app:1.0 nmafolder
